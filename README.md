@@ -202,5 +202,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Built with modern web technologies and best practices for enterprise data management. Special thanks to the open source community for the amazing tools and libraries that make this project possible.
 
 ---
-
-**Made with ❤️ for data teams everywhere**
