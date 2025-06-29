@@ -58,7 +58,7 @@ Data Control Tower (DCT) is a cloud-native platform designed to help enterprises
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/data-control-tower.git
+git clone https://github.com/YOURUSERNAME/DCT.git
 cd data-control-tower
 ```
 
