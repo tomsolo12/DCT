@@ -1,0 +1,111 @@
+🔧 1. Stability, Performance & Error Handling
+ Improve schema scan performance
+
+Add loading indicators, pagination on large schema loads
+
+Throttle metadata polling
+
+ Error handling across all modules
+
+Try/catch for all fetch/DB operations
+
+Display user-friendly error messages for failed scans, queries, etc.
+
+ Query execution timeouts
+
+Set a max execution time for SQL queries
+
+Return clear timeout errors
+
+🧠 2. Rule Builder Improvements (Data Quality)
+ Add rule presets/templates
+
+Non-null
+
+Email format
+
+Value range
+
+Regex pattern
+
+ Sample data preview when building/editing a rule
+
+Fetch 10 random rows from the table/field during rule creation
+
+Show which values would fail the rule
+
+ Test Rule mode (before saving)
+
+Option to preview results of a rule against a selected table
+
+🧩 3. Issue Management Workflow
+ Create basic issue entity/model
+
+Fields: issue_id, rule_id, table_name, status, assignee, comments[]
+
+ Build “Issue Tracker” tab
+
+Table view: issue ID | rule violated | table | status | date | assigned to
+
+Status filter (Open, In Progress, Resolved)
+
+ Add comments panel for each issue
+
+Simple textarea + timestamped comments
+
+💬 4. AI Assistant Improvements
+ Improve query context awareness
+
+Add dropdown for user to select the table or field they're querying
+
+Use this to refine prompt passed to OpenAI
+
+ Add query explanation popup
+
+Tooltip or modal that explains the logic of generated SQL
+
+ Build a “Query Template Gallery”
+
+Categories: Aggregation, Joins, Filters, Time Series
+
+Allow user to one-click insert templates into the editor
+
+🔐 5. RBAC & Role UI Enhancements
+ Create role selector in user management UI (Admin, Editor, Viewer)
+
+ On frontend, conditionally disable/hide UI components based on role
+
+ Restrict actions in backend based on role level (middleware check)
+
+🛠️ 6. Admin Panel & Monitoring
+ Build “Admin Panel” screen
+
+List of sources, rules, users, last sync time, total issues
+
+Add “Force Sync” and “Deactivate Source” actions
+
+ Add system activity log (basic audit trail)
+
+Record events like: rule created, source added, query executed
+
+Display in a scrollable list with filters
+
+⚙️ 7. System Optimization & Deployment Readiness
+ Enable connection pooling to avoid hammering DB
+
+ Add a central config file for managing DB credentials (dotenv or secrets)
+
+ Implement result pagination on large query result sets
+
+ Refactor backend routes into modular structure (API folder per feature)
+
+📘 8. Documentation & Help
+ Add inline help tooltips for all rule types
+
+ Create a “Getting Started” panel/page
+
+How to add a source
+
+How to write your first rule
+
+How to run a query

@@ -1,0 +1,154 @@
+Project Name: Data Control Tower (DCT) - MVP Requirements Document
+
+Version: 1.0
+Author: Thomas Solomon
+Date: June 27, 2025
+
+1. Project Overview
+
+Objective:To develop an MVP (Minimum Viable Product) for the Data Control Tower (DCT), a cloud-native platform that enables enterprises and SMBs to monitor, manage, and improve data quality, lineage, and governance across distributed data environments.
+
+The MVP will focus on three core pillars:
+
+Data Discovery & Cataloging
+
+Data Quality Monitoring
+
+Query Studio Interface
+
+2. Key MVP Modules & Features
+
+2.1 Data Discovery & Cataloging
+
+Purpose: Automatically identify and document data sources, metadata, and schemas across connected systems.
+
+Core Features:
+
+Connect to SQL-based sources (PostgreSQL, Snowflake, SQL Server).
+
+Auto-scan schemas and tables, extract:
+
+Table names, field names
+
+Data types
+
+Null counts, uniqueness, cardinality
+
+Generate a searchable catalog (basic UI table with filters).
+
+Basic tagging (e.g., "customer", "finance", "PII").
+
+Show last refresh date / scan timestamp.
+
+2.2 Data Quality Monitoring
+
+Purpose: Define and enforce basic integrity rules across datasets.
+
+Core Features:
+
+Allow user to define basic data quality rules:
+
+Required fields (non-null)
+
+Value ranges (min/max for numeric fields)
+
+Format validation (email, phone, regex)
+
+Run checks on schedule or manual trigger.
+
+Generate Data Quality Score (per table).
+
+Flag rule violations and anomalies.
+
+Display DQ results in dashboard (pass/fail per rule/table).
+
+2.3 DCT Query Studio
+
+Purpose: Interface for users to write, run, and save queries across connected sources.
+
+Core Features:
+
+SQL editor with syntax highlighting.
+
+Connection to primary data source (one at MVP stage).
+
+Ability to save, favorite, and version queries.
+
+Inline rule violation and metadata hinting.
+
+Simple export (CSV or JSON).
+
+3. Non-Functional Requirements
+
+Cloud-hosted (initial MVP on AWS or GCP).
+
+Role-based access control (Admin, Editor, Viewer).
+
+Authentication: Email/password or OAuth2 (Google/Microsoft SSO optional).
+
+Secure handling of credentials and data access tokens.
+
+Basic audit log for metadata changes and rule modifications.
+
+4. Technical Stack (Suggested)
+
+Backend: Python (FastAPI or Django), SQLAlchemy
+
+Frontend: React + Tailwind CSS
+
+Database: PostgreSQL (metadata), Redis (caching)
+
+Deployment: Docker + Kubernetes (optional), CI/CD via GitHub Actions
+
+Data Connectors: SQLAlchemy-based connectors, basic JDBC support
+
+5. Milestones
+
+Week 1–2: Discovery + Schema & Source Scanning
+
+Week 3–4: Basic Catalog UI + Rule Definition Interface
+
+Week 5–6: Query Studio MVP + Integration with Catalog Metadata
+
+Week 7: DQ Monitoring Engine + Alert Dashboard
+
+Week 8: Final UI polish, QA, and Deployment
+
+6. Stretch Goals (Post-MVP)
+
+AI Copilot for rule suggestions & field descriptions
+
+Integration with Power BI / Tableau for lineage mapping
+
+REST API for programmatic access to catalog and rules
+
+7. Success Criteria
+
+Connect to at least one production-grade database.
+
+Scan and display schema metadata in catalog.
+
+Define and enforce at least 3 DQ rules per table.
+
+Execute live queries and display results.
+
+Demonstrate DQ alerts and issue tracking in basic dashboard.
+
+8. Target Users for Testing
+
+Data Analysts
+
+BI Developers
+
+Data Engineers
+
+Governance Managers
+
+9. Known Risks
+
+Schema variability across sources.
+
+Query permission issues in enterprise data warehouses.
+
+Time and complexity of secure credential handling.
+

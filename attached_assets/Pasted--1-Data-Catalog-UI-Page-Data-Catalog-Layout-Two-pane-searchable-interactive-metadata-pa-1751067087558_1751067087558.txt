@@ -1,0 +1,103 @@
+🔷 1. Data Catalog UI
+
+📘 Page: “Data Catalog”
+Layout: Two-pane, searchable, interactive metadata panel
+
+Left Panel (Sidebar):
+
+Source Tree View
+Snowflake > Finance_DB > Tables
+PostgreSQL > Marketing_DB > Views
+Right Panel (Main Content):
+
+Table: Metadata Summary
+Table name | Source | Last Scan | # Fields | DQ Score | Tags
+Hover → tooltip with preview
+Click → opens “Table Detail Drawer”
+Modal/Drawer: Table Detail
+
+Schema fields listed
+Field Name | Type | Nullable | Example | Rule Violations
+Business Tags (editable)
+Lineage path (for MVP: “N/A” or manual entry)
+🔷 2. Data Quality Rules UI
+
+📊 Page: “DQ Monitoring”
+Layout: Table-centric dashboard
+
+Top Filter Bar:
+
+Source | Table | Rule Status (Pass/Fail/Error) | DQ Score range
+Table: Rule Matrix
+
+Rule Name | Table | Field | Rule Type | Last Run | Result | Owner
+Rule Result Coloring:
+
+✅ Pass (green)
+⚠️ Warning/Anomaly (yellow)
+❌ Fail (red)
+“Add Rule” Modal
+
+Step-by-step rule builder:
+Select Source → Table → Field
+Choose Rule Type (Non-null, Format, Range)
+Define Rule
+Preview Impact (sample values)
+Save & Activate
+🔷 3. DCT Query Studio UI
+
+🧠 Page: “Query Studio”
+Layout: Full-screen editor experience
+
+Top Section (Header Bar):
+
+Select Source DB
+Save | Run | Export | Version History
+Main Section (Split View):
+
+Left: SQL Editor
+Syntax highlighting, line numbers, autocomplete
+Inline metadata tooltip (hover on field = type, description)
+Right: Query Results
+Tabular grid with filter/export buttons
+Optional DQ Warnings tab (violated rules for queried fields)
+Bottom Drawer (optional):
+
+Saved Queries
+Templates
+Recent Runs
+🔷 4. Dashboard / Home UI
+
+📈 Page: “Overview Dashboard”
+Layout: KPI panels + DQ Score breakdown
+
+Top: KPI Cards
+
+Total Sources Connected
+Total Tables Cataloged
+Rules Defined
+% Passing DQ Checks
+Last Scan Time
+Middle: DQ Score by Source (Bar or Donut Chart)
+Bottom: Recent Activity Feed
+
+Rule created by John
+Table scan completed
+Issue auto-raised for Customer_Email
+🔷 5. Navigation (Global Layout)
+
+Sidebar Navigation:
+
+🏠 Dashboard
+📘 Catalog
+📊 DQ Monitor
+🧠 Query Studio
+👤 Governance & Roles
+⚙️ Settings
+🔷 Design Philosophy
+
+Clean enterprise look: neutral tones (grays, whites, deep blues)
+Rounded cards (md-xl), light shadows
+Consistent iconography (Lucide or Material)
+Tooltips, modals, drawers for depth without clutter
+Tailwind-friendly layout for fast dev + mobile-friendly
